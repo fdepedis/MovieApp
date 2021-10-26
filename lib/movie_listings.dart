@@ -4,6 +4,7 @@ import 'package:flutter/services.dart';
 import 'package:movie_app/models/popular.dart';
 import 'package:movie_app/service/movie_service.dart';
 import 'package:provider/provider.dart';
+import 'package:auto_size_text/auto_size_text.dart';
 
 import 'detail_screen.dart';
 
@@ -118,11 +119,12 @@ class _MovieListingsState extends State<MovieListings> {
                           ),
                           Expanded(
                             child: Container(
-                              child: Text(
+                              child: AutoSizeText(
                                 popular.results[index].overview,
-                                overflow: TextOverflow.ellipsis,
                                 maxLines: 12,
+                                textAlign: TextAlign.justify,
                                 style: TextStyle(fontSize: 12),
+                                overflow: TextOverflow.ellipsis,
                               ),
                             ),
                           ),
