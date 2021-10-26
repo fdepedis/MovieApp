@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Provider(
-      create: (_) => MovieService.create(),
+      create: (BuildContext context) => MovieService.create(),
       dispose: (_, MovieService service) => service.client.dispose(),
       child: MaterialApp(
         title: 'Movie Listings',
