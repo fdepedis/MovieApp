@@ -63,12 +63,6 @@ class DetailScreen extends StatelessWidget {
                   ],
                 ),
               ),
-              /*Container(
-                padding: const EdgeInsets.only(bottom: 8),
-                child: Text(
-                  'Adult: ',
-                ),
-              ),*/
               Icon(
                 Icons.supervised_user_circle,
                 color: (popular.results[index].adult == false)
