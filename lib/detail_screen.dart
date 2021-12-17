@@ -1,5 +1,6 @@
 import 'dart:ffi';
 
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:movie_app/models/popular.dart';
@@ -62,12 +63,6 @@ class DetailScreen extends StatelessWidget {
                   ],
                 ),
               ),
-              /*Container(
-                padding: const EdgeInsets.only(bottom: 8),
-                child: Text(
-                  'Adult: ',
-                ),
-              ),*/
               Icon(
                 Icons.supervised_user_circle,
                 color: (popular.results[index].adult == false)
@@ -93,9 +88,11 @@ class DetailScreen extends StatelessWidget {
 
     Widget textSection = Container(
       padding: const EdgeInsets.all(32),
-      child: Text(
+      child: AutoSizeText(
         popular.results[index].overview,
-        softWrap: true,
+        maxLines: 50,
+        textAlign: TextAlign.justify,
+        style: TextStyle(fontSize: 14),
       ),
     );
 
