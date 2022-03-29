@@ -1,5 +1,4 @@
 import 'dart:async';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'movie_listings.dart';
 
@@ -71,7 +70,7 @@ class _SplashScreenState extends State<SplashScreen> {
                 padding: const EdgeInsets.all(10.0),
                 child: Container(
                   child: Text(
-                    'developed by Top1 - rev.1.0',
+                    'Developed by FDP - rev.1.0',
                     style: TextStyle(
                         fontFamily: 'Source Sans Pro',
                         fontSize: 14.0,
