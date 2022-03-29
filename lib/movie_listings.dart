@@ -40,15 +40,11 @@ class _MovieListingsState extends State<MovieListings> {
     );
   }
 
-// 1
   FutureBuilder<Response<Popular>> _buildBody(BuildContext context) {
     return FutureBuilder<Response<Popular>>(
-      // 2
       future: Provider.of<MovieService>(context).getPopularMovies(),
       builder: (context, snapshot) {
-        // 3
         if (snapshot.connectionState == ConnectionState.done) {
-          // 4
           if (snapshot.hasError) {
             return Center(
               child: Text(
@@ -58,12 +54,11 @@ class _MovieListingsState extends State<MovieListings> {
               ),
             );
           }
-          // 5
+
           final popular = snapshot.data.body;
-          // 6
+
           return _buildMovieList(context, popular);
         } else {
-          // 7
           // Show a loading indicator while waiting for the movies
           return Center(
             child: CircularProgressIndicator(),
